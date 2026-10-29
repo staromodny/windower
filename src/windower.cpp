@@ -83,7 +83,7 @@ namespace windower
 
     HRESULT WindowManager::set_dark_theme(BOOL dark) const noexcept
     {
-        BOOL value = dark;
+        const BOOL value = dark;
         return DwmSetWindowAttribute(_hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, &value, sizeof(value));
     }
 

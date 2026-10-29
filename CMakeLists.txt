@@ -56,3 +56,11 @@ install(EXPORT WindowerTargets
         NAMESPACE Windower::
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/Windower
 )
+
+option(WINDOWER_BUILD_EXAMPLES "Build Windower examples" ${PROJECT_IS_TOP_LEVEL})
+if(WINDOWER_BUILD_EXAMPLES)
+    add_executable(WindowerExample example/main.cpp)
+    target_link_libraries(WindowerExample PRIVATE Windower::Windower)
+
+    set_target_properties(WindowerExample PROPERTIES WIN32_EXECUTABLE TRUE)
+endif()
