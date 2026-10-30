@@ -1,13 +1,13 @@
 # windower
 Windower is a lightweight C++23 Win32 window wrapper designed to simplify native Windows window management.
 
-#Requirements
+# Requirements
 - Windows (features dependent on versions).
 - C++23 compatible compiler.
 - CMake 3.25 or newer.
 - Windows SDK
 
-#Installation
+# Installation
 Windower can be included in your CMake project using FetchContent.
 Add the following to your CMakeLists.txt:
 ```
