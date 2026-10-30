@@ -3,14 +3,31 @@
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-    if (msg == WM_DESTROY) {
-        ::PostQuitMessage(0);
-        return 0;
+    switch (msg)
+    {
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps{};
+            const auto hdc = BeginPaint(hWnd, &ps);
+
+            const char* text = "Hello from Windower!";
+            TextOutA(hdc, 20, 20, text, static_cast<int>(strlen(text)));
+            EndPaint(hWnd, &ps);
+            return 0;
+        }
+
+    case WM_DESTROY:
+        {
+            ::PostQuitMessage(0);
+            return 0;
+        }
+    default:
+        break;
     }
     return DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
-int APIENTRY WinMain(HINSTANCE hInst, HINSTANCE hInstPrev, PSTR cmdline, int cmdshow)
+int APIENTRY WinMain(HINSTANCE hInst, [[maybe_unused]] HINSTANCE hInstPrev, [[maybe_unused]] PSTR cmdline, [[maybe_unused]] int cmdshow)
 {
     static constexpr auto WINDOW_EX_FLAGS = WS_EX_TOPMOST;
     static constexpr auto WINDOW_SIZE_X = 350;
