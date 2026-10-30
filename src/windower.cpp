@@ -120,13 +120,6 @@ namespace windower
 
     std::expected<std::unique_ptr<WindowManager>, std::string> create_window(WNDCLASSEX& wc, const WindowCreationInfo& params)
     {
-        //NOTE: I don't think it's possible to disable aero in w10/11, however, it's cool to have more checks that can break whole shit
-        auto dwm_enabled = BOOL{FALSE};
-        if (FAILED(DwmIsCompositionEnabled(&dwm_enabled)))
-        {
-            return std::unexpected("Please enable AERO composition.");
-        }
-
         std::memset(&wc, 0, sizeof(wc));
         wc.cbSize = sizeof(WNDCLASSEX);
         wc.style = CS_CLASSDC;

@@ -89,7 +89,4 @@ namespace windower
 
     [[nodiscard]]
     std::expected<std::unique_ptr<WindowManager>, std::string> create_window(WNDCLASSEX& wc, const WindowCreationInfo& params);
-
-    [[nodiscard]]
-    bool pump_messages();
 }
