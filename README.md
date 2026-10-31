@@ -1,6 +1,7 @@
 [![C++20](https://img.shields.io/badge/C%2B%2B-23-blue.svg)](https://en.cppreference.com/w/cpp/23)
 [![License](https://img.shields.io/github/license/staromodny/windower)](https://github.com/staromodny/windower/blob/master/LICENSE)
 [![Release](https://img.shields.io/github/v/release/staromodny/windower)](https://github.com/staromodny/windower/releases)
+[![GitHub issues](https://img.shields.io/github/issues/staromodny/windower?color=purple)](https://github.com/staromodny/windower/issues)
 # windower
 Windower is a lightweight C++23 Win32 window wrapper designed to simplify native Windows window management.
 
